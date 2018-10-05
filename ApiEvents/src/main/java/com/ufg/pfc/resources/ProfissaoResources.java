@@ -19,17 +19,17 @@ import org.springframework.web.bind.annotation.RestController;
 import org.springframework.web.context.request.RequestAttributes;
 import org.springframework.web.servlet.support.ServletUriComponentsBuilder;
 
-import com.ufg.ApiEvents.repository.IProfissoesRepository;
+import com.ufg.pfc.repository.IProfissaoRepository;
 import com.ufg.pfc.domain.Profissao;
-import com.ufg.pfc.services.ProfissoesService;
+import com.ufg.pfc.services.ProfissaoService;
 import com.ufg.pfc.services.exceptions.ProfissaoNaoEncontradaException;
 
 @RestController
 @RequestMapping("/profissoes")
-public class ProfissoesResources {
+public class ProfissaoResources {
 	
 	@Autowired
-	private ProfissoesService service; 
+	private ProfissaoService service; 
 
 	@RequestMapping(method = RequestMethod.GET)
 	public ResponseEntity<List<Profissao>> listar() {		  
@@ -73,6 +73,5 @@ public class ProfissoesResources {
 			return ResponseEntity.notFound().build();
 		}		
 		return ResponseEntity.noContent().build();				
-	}
-	
+	}	
 }

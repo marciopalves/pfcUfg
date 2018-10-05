@@ -36,6 +36,7 @@ public class Usuario {
 	@JsonInclude(Include.NON_NULL)
 	private Date nasciemto;
 	
+	@Transient
 	private Endereco endereco;
 		
 	public Long getId() {

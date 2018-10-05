@@ -6,15 +6,15 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.dao.EmptyResultDataAccessException;
 import org.springframework.stereotype.Service;
 
-import com.ufg.ApiEvents.repository.IProfissoesRepository;
+import com.ufg.pfc.repository.IProfissaoRepository;
 import com.ufg.pfc.domain.Profissao;
 import com.ufg.pfc.services.exceptions.ProfissaoNaoEncontradaException;
 
 @Service
-public class ProfissoesService {
+public class ProfissaoService {
 	
 	@Autowired
-	private IProfissoesRepository repository;
+	private IProfissaoRepository repository;
 	
 	public List<Profissao> listar(){
 		return repository.findAll();
@@ -44,8 +44,7 @@ public class ProfissoesService {
 	
 	public void atualizar(Profissao profissao) {
 		verificarExistencia(profissao);
-		repository.save(profissao);
-		
+		repository.save(profissao);		
 	}
 	
 	private void verificarExistencia(Profissao profissao) {

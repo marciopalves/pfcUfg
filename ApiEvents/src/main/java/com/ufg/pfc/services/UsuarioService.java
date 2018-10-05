@@ -6,7 +6,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.dao.EmptyResultDataAccessException;
 import org.springframework.stereotype.Service;
 
-import com.ufg.ApiEvents.repository.IUsuarioRepository;
+import com.ufg.pfc.repository.IUsuarioRepository;
 import com.ufg.pfc.domain.Usuario;
 import com.ufg.pfc.services.exceptions.UsuarioNaoEncontradoException;
 

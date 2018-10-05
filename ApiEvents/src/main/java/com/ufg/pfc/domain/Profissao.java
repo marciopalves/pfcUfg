@@ -58,4 +58,3 @@ public class Profissao {
 		return "Profissão "+this.nome +" - "+this.descricao;
 	}
 }
-	

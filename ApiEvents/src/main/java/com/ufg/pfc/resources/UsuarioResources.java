@@ -18,13 +18,14 @@ import org.springframework.web.context.request.RequestAttributes;
 import org.springframework.web.servlet.support.ServletUriComponentsBuilder;
 
 import com.ufg.pfc.domain.Usuario;
-import com.ufg.ApiEvents.repository.IUsuarioRepository;
+import com.ufg.pfc.repository.IUsuarioRepository;
 import com.ufg.pfc.services.UsuarioService;
 import com.ufg.pfc.services.exceptions.UsuarioNaoEncontradoException;
 
 @RestController
 @RequestMapping(value = "/usuarios")
-public class UsuariosResources {
+
+public class UsuarioResources {
 	@Autowired
 	private UsuarioService service;
 	

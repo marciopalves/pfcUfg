@@ -1,4 +1,4 @@
-package ApiEvents.ApiEvents;
+package com.ufg.pfc;
 
 import org.junit.Test;
 import org.junit.runner.RunWith;
