@@ -74,14 +74,7 @@ public class Usuario {
 	}
 	public void setNasciemto(Date nasciemto) {
 		this.nasciemto = nasciemto;
-	}
-	
-	public Usuario() {}
-	
-	public Usuario(String nome) {
-		this.nome = nome;
-		
-	}
+	}	
 	
 	public Endereco getEndereco() {
 		return this.endereco;
@@ -91,4 +84,7 @@ public class Usuario {
 		this.endereco = endereco;
 	}
 	
+	public Usuario() {
+		
+	}
 }
