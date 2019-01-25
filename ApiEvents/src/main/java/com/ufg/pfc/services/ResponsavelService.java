@@ -4,12 +4,14 @@ import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.dao.EmptyResultDataAccessException;
+import org.springframework.stereotype.Service;
 
 import com.ufg.pfc.domain.Responsavel;
 import com.ufg.pfc.repository.IResponsavelRepository;
 import com.ufg.pfc.services.exceptions.ResponsavelNaoEncontradoException;
 import com.ufg.pfc.services.exceptions.UsuarioNaoEncontradoException;
 
+@Service
 public class ResponsavelService {
 
 	@Autowired
