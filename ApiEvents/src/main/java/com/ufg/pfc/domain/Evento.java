@@ -28,8 +28,8 @@ public class Evento {
 	@OneToOne
 	private Responsavel responsavel;
 	
-	@OneToMany(mappedBy = "id", cascade = CascadeType.ALL, orphanRemoval = true)
-	private List<Usuario> profisionais;
+	//@OneToMany(mappedBy = "id", cascade = CascadeType.ALL, orphanRemoval = true)
+	//private List<Usuario> profisionais;
 
 	public Long getId() {
 		return id;
@@ -71,13 +71,13 @@ public class Evento {
 		this.responsavel = responsavel;
 	}
 
-	public List<Usuario> getProfisionais() {
-		return profisionais;
-	}
+	//public List<Usuario> getProfisionais() {
+//		return profisionais;
+	//}
 
-	public void setProfisionais(List<Usuario> profisionais) {
-		this.profisionais = profisionais;
-	}
+	//public void setProfisionais(List<Usuario> profisionais) {
+//		this.profisionais = profisionais;
+//	}
 	
 	
 	
