@@ -13,6 +13,8 @@ import com.ufg.pfc.services.exceptions.UsuarioNaoEncontradoException;
 @Service
 public class UsuarioService {
 	
+	public static final String USER_NOTFOUND = "Usuário não pode ser encontrado!";
+	
 	@Autowired
 	private IUsuarioRepository repository;
 	
@@ -20,10 +22,10 @@ public class UsuarioService {
 		return repository.findAll();		
 	}
 	
-	public Usuario busca(Long id) {
+	public Usuario buscar(Long id) {
 		Usuario usuario = repository.getOne(id);
 		if (usuario == null) {
-			throw new UsuarioNaoEncontradoException("Usuário não pode ser encontrado!");
+			throw new UsuarioNaoEncontradoException(USER_NOTFOUND);
 		}
 		return usuario;
 	}
@@ -37,7 +39,7 @@ public class UsuarioService {
 		try {
 			repository.deleteById(id);
 		}catch(EmptyResultDataAccessException e) {
-			throw new UsuarioNaoEncontradoException("Usuário não pode ser encontrado!");
+			throw new UsuarioNaoEncontradoException(USER_NOTFOUND);
 		}
 	}
 	
@@ -47,6 +49,6 @@ public class UsuarioService {
 	}
 	
 	private void verificarExistencia(Usuario usuario) {
-		busca(usuario.getId());
+		buscar(usuario.getId());
 	}
 }

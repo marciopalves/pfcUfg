@@ -13,6 +13,8 @@ import com.ufg.pfc.services.exceptions.UsuarioNaoEncontradoException;
 
 @Service
 public class ResponsavelService {
+	
+	public static final String RESPONSIBLE_NOTFOUND = "Responsável não pode ser encontrado!";
 
 	@Autowired
 	private IResponsavelRepository repository;
@@ -24,7 +26,7 @@ public class ResponsavelService {
 	public Responsavel busca(Long id) {
 		Responsavel responsavel = repository.getOne(id);
 		if (responsavel == null) {
-			throw new UsuarioNaoEncontradoException("Responsável não pode ser encontrado!");
+			throw new UsuarioNaoEncontradoException(RESPONSIBLE_NOTFOUND);
 		}
 		return responsavel;
 	}
@@ -38,7 +40,7 @@ public class ResponsavelService {
 		try {
 			repository.deleteById(id);
 		}catch(EmptyResultDataAccessException e) {
-			throw new ResponsavelNaoEncontradoException("Responsável não pode ser encontrado!");
+			throw new ResponsavelNaoEncontradoException(RESPONSIBLE_NOTFOUND);
 		}
 	}
 	

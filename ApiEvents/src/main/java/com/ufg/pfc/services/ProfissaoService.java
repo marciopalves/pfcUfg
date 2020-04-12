@@ -13,6 +13,8 @@ import com.ufg.pfc.services.exceptions.ProfissaoNaoEncontradaException;
 @Service
 public class ProfissaoService {
 	
+	public static final String PROFESSION_NOTFOUND = "Profissão não pode ser encontrada!";
+	
 	@Autowired
 	private IProfissaoRepository repository;
 	
@@ -24,7 +26,7 @@ public class ProfissaoService {
 		Profissao profissao = repository.getOne(id);
 		
 		if(profissao == null) {
-			throw new ProfissaoNaoEncontradaException("Profissão não pode ser encontrada");
+			throw new ProfissaoNaoEncontradaException(PROFESSION_NOTFOUND);
 		}
 		return profissao;
 	}
@@ -38,7 +40,7 @@ public class ProfissaoService {
 		try {			
 			repository.deleteById(id);
 		}catch(EmptyResultDataAccessException e){
-			throw new ProfissaoNaoEncontradaException("Profissão não pode ser encontrada");
+			throw new ProfissaoNaoEncontradaException(PROFESSION_NOTFOUND);
 		}		
 	}
 	

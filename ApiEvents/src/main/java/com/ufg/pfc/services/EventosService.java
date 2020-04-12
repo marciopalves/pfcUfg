@@ -12,6 +12,8 @@ import com.ufg.pfc.services.exceptions.EventoNaoEncontradoException;
 
 @Service
 public class EventosService {
+	
+	public static final String EVENT_NOTFOUND = "Evento não encontrado!";
 
 	@Autowired
 	private IEvento repository;
@@ -25,11 +27,10 @@ public class EventosService {
 		Evento evento = repository.getOne(id);
 		
 		if (evento == null) {
-			throw new EventoNaoEncontradoException("Evento não encontrado!");
+			throw new EventoNaoEncontradoException(EVENT_NOTFOUND);
 		}
 		return evento;
 	}
-
 
 	public Evento salvar(Evento evento) {
 		evento.setId(null);
@@ -40,7 +41,7 @@ public class EventosService {
 		try {			
 			repository.deleteById(id);
 		}catch(EmptyResultDataAccessException e){
-			throw new EventoNaoEncontradoException("Evento não pode ser encontrada");
+			throw new EventoNaoEncontradoException(EVENT_NOTFOUND);
 		}		
 	}
 	
@@ -51,8 +52,6 @@ public class EventosService {
 	public void atualizar(Evento evento) throws EventoNaoEncontradoException {
 		verificarExistencia(evento);
 		repository.save(evento);		
-	}
-	
-	
+	}		
 	
 }

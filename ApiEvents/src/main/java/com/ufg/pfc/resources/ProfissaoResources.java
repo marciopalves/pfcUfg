@@ -1,7 +1,5 @@
 package com.ufg.pfc.resources;
 
-import static org.springframework.test.web.client.response.MockRestResponseCreators.withNoContent;
-
 import java.net.URI;
 import java.util.List;
 

@@ -23,9 +23,10 @@ import com.ufg.pfc.services.UsuarioService;
 import com.ufg.pfc.services.exceptions.UsuarioNaoEncontradoException;
 
 @RestController
-@RequestMapping(value = "/usuarios")
+@RequestMapping(value = "/usuarioss")
 
 public class UsuarioResources {
+	
 	@Autowired
 	private UsuarioService service;
 	
@@ -41,11 +42,11 @@ public class UsuarioResources {
 		
 		return ResponseEntity.created(uri).build();
 	}
-	
+	/*
 	@RequestMapping(value ="/{id}", method = RequestMethod.GET)
 	public ResponseEntity<?> buscar(@PathVariable("id") Long id) {
-		Usuario usuario = usuario = service.busca(id);
-		return ResponseEntity.status(HttpStatus.OK).body(usuario);
+		Usuario as  = service.busca(id);
+		return ResponseEntity.status(HttpStatus.OK).body(as);
 	}
 
 	@RequestMapping(value ="/{id}", method = RequestMethod.DELETE)
@@ -53,11 +54,11 @@ public class UsuarioResources {
 		service.deletar(id);					
 		return ResponseEntity.noContent().build();		 
 	}
-	
-	@RequestMapping(value ="/{id}", method = RequestMethod.PUT)
-	public ResponseEntity<Void> atualizar(@RequestBody Usuario usuario, @PathVariable("id") Long id) {
-		usuario.setId(id);		
-		service.atualiza(usuario);		
-		return ResponseEntity.noContent().build();
-	}		
+	*/
+	//@RequestMapping(value ="/{id}", method = RequestMethod.PUT)
+	//public ResponseEntity<Void> atualizar(@RequestBody Usuario usuario, @PathVariable("id") Long id) {
+///		usuario.setId(id);		
+		//service.atualiza(usuario);		
+		//return ResponseEntity.noContent().build();
+	//}		
 }
