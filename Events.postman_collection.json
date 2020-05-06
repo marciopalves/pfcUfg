@@ -1,0 +1,133 @@
+{
+	"id": "22c45522-7ba9-b5be-5bbd-d46007e60936",
+	"name": "Events",
+	"description": "",
+	"order": [
+		"841ebee6-c74e-8ae4-fc2d-944b4048b1ce",
+		"62a78e89-4d5d-8b65-0c38-5c2d4c83cbeb",
+		"8931d2fd-63df-0e46-0322-11604d343036",
+		"485d7715-68af-2be9-0c9f-81bb3084d57f"
+	],
+	"folders": [],
+	"folders_order": [],
+	"timestamp": 1588691447183,
+	"owner": "2204184",
+	"public": false,
+	"requests": [
+		{
+			"id": "485d7715-68af-2be9-0c9f-81bb3084d57f",
+			"headers": "Content-Type: application/json\n",
+			"headerData": [
+				{
+					"key": "Content-Type",
+					"value": "application/json",
+					"description": "",
+					"enabled": true
+				}
+			],
+			"url": "http://localhost:8081/usuarios",
+			"queryParams": [],
+			"pathVariables": {},
+			"pathVariableData": [],
+			"preRequestScript": null,
+			"method": "POST",
+			"collectionId": "22c45522-7ba9-b5be-5bbd-d46007e60936",
+			"data": [],
+			"dataMode": "raw",
+			"name": "http://localhost:8081/usuarios",
+			"description": "Inclusão de Novo Usuário.",
+			"descriptionFormat": "html",
+			"time": 1588693781526,
+			"version": 2,
+			"responses": [],
+			"tests": null,
+			"currentHelper": "normal",
+			"helperAttributes": {},
+			"rawModeData": "{\n        \"id\": 4,\n        \"nome\": \"Márcio Pereira\",\n        \"cpf\": \"11111111111\",\n        \"email\": \"mpalves89@hotmail.com\",\n        \"telefone\": \"62993385048\",\n        \"nasciemto\": null\n    }"
+		},
+		{
+			"id": "62a78e89-4d5d-8b65-0c38-5c2d4c83cbeb",
+			"headers": "Content-Type: application/json\n",
+			"headerData": [
+				{
+					"key": "Content-Type",
+					"value": "application/json",
+					"description": "",
+					"enabled": true
+				}
+			],
+			"url": "http://localhost:8081/responsaveis",
+			"queryParams": [],
+			"preRequestScript": null,
+			"pathVariables": {},
+			"pathVariableData": [],
+			"method": "GET",
+			"data": [],
+			"dataMode": "raw",
+			"version": 2,
+			"tests": null,
+			"currentHelper": "normal",
+			"helperAttributes": {},
+			"time": 1588694052784,
+			"name": "http://localhost:8081/responsaveis",
+			"description": "buscando todos usuários",
+			"collectionId": "22c45522-7ba9-b5be-5bbd-d46007e60936",
+			"responses": [],
+			"rawModeData": "{\n\t\"nome\":\"João Canabrava\",\n\t\"cpf\":\"11111111111\",\n\t\"email\":\"joaobirita@bol.com\",\n\t\"telefone\":\"41 812345489\"\n\t\n}"
+		},
+		{
+			"id": "841ebee6-c74e-8ae4-fc2d-944b4048b1ce",
+			"headers": "Content-Type: application/json\n",
+			"headerData": [
+				{
+					"key": "Content-Type",
+					"value": "application/json",
+					"description": "",
+					"enabled": true
+				}
+			],
+			"url": "http://localhost:8081/usuarios",
+			"queryParams": [],
+			"pathVariables": {},
+			"pathVariableData": [],
+			"preRequestScript": null,
+			"method": "GET",
+			"collectionId": "22c45522-7ba9-b5be-5bbd-d46007e60936",
+			"data": [],
+			"dataMode": "raw",
+			"name": "http://localhost:8081/usuarios/",
+			"description": "buscando todos usuários",
+			"descriptionFormat": "html",
+			"time": 1588693453560,
+			"version": 2,
+			"responses": [],
+			"tests": null,
+			"currentHelper": "normal",
+			"helperAttributes": {},
+			"rawModeData": "{\n\t\"nome\":\"João Canabrava\",\n\t\"cpf\":\"11111111111\",\n\t\"email\":\"joaobirita@bol.com\",\n\t\"telefone\":\"41 812345489\"\n\t\n}"
+		},
+		{
+			"id": "8931d2fd-63df-0e46-0322-11604d343036",
+			"headers": "",
+			"headerData": [],
+			"url": "http://localhost:8081/profissoes",
+			"queryParams": [],
+			"pathVariables": {},
+			"pathVariableData": [],
+			"preRequestScript": null,
+			"method": "GET",
+			"collectionId": "22c45522-7ba9-b5be-5bbd-d46007e60936",
+			"data": null,
+			"dataMode": "params",
+			"name": "http://localhost:8081/profissoes",
+			"description": "buscando todas as profissões",
+			"descriptionFormat": "html",
+			"time": 1588693496495,
+			"version": 2,
+			"responses": [],
+			"tests": null,
+			"currentHelper": "normal",
+			"helperAttributes": {}
+		}
+	]
+}

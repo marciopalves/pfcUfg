@@ -38,7 +38,7 @@ public class Usuario implements Serializable {
 	private String nasciemto;
 	
 	//@Transient
-//	private Endereco endereco;
+	//private Endereco endereco;
 	
 	public Usuario() {
 		
@@ -81,12 +81,13 @@ public class Usuario implements Serializable {
 		this.nasciemto = nasciemto;
 	}	
 	
-	//public Endereco getEndereco() {
-	///	return this.endereco;
-//	}
+	/*
+	public Endereco getEndereco() {
+		return this.endereco;
+	}
 	
-	///public void setEndereco(Endereco endereco) {
-	//	this.endereco = endereco;
-//	}
-	
+	public void setEndereco(Endereco endereco) {
+		this.endereco = endereco;
+	}
+	*/
 }
