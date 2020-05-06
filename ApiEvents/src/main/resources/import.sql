@@ -8,5 +8,7 @@ insert into profissao(id, nome) values (1, 'Garçon');
 insert into profissao(id, nome) values (2, 'Cozinheiro');
 insert into profissao(id, nome) values (3, 'Churrasqueiro');
 
-
-
+-- Responsáveis 'Pessoa que vai criar os eventos'
+insert into reponsavel(id, nome, cpf, email, telefone) values (1, 'Márcio Pereira', '11111111111', 'mpalves89@hotmail.com', '6299999999');
+insert into reponsavel(id, nome, cpf, email, telefone) values (2, 'Pedro Francisco da Silva', '22222222222', 'pdra90@hotmail.com', '6235212444');
+insert into reponsavel(id, nome, cpf, email, telefone) values (3, 'Bruno Peixoto', '3333333333', 'brun@hotmail.com', '6235212444');

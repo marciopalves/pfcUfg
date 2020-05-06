@@ -23,7 +23,7 @@ import com.ufg.pfc.services.UsuarioService;
 import com.ufg.pfc.services.exceptions.UsuarioNaoEncontradoException;
 
 @RestController
-@RequestMapping(value = "/usuarioss")
+@RequestMapping(value = "/usuarios")
 
 public class UsuarioResources {
 	
@@ -42,23 +42,16 @@ public class UsuarioResources {
 		
 		return ResponseEntity.created(uri).build();
 	}
-	/*
+	
 	@RequestMapping(value ="/{id}", method = RequestMethod.GET)
 	public ResponseEntity<?> buscar(@PathVariable("id") Long id) {
-		Usuario as  = service.busca(id);
+		Usuario as  = service.buscar(id);
 		return ResponseEntity.status(HttpStatus.OK).body(as);
 	}
-
+	
 	@RequestMapping(value ="/{id}", method = RequestMethod.DELETE)
 	public ResponseEntity<Void> deletar(@PathVariable("id") Long id) {		
 		service.deletar(id);					
 		return ResponseEntity.noContent().build();		 
 	}
-	*/
-	//@RequestMapping(value ="/{id}", method = RequestMethod.PUT)
-	//public ResponseEntity<Void> atualizar(@RequestBody Usuario usuario, @PathVariable("id") Long id) {
-///		usuario.setId(id);		
-		//service.atualiza(usuario);		
-		//return ResponseEntity.noContent().build();
-	//}		
 }
