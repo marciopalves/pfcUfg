@@ -71,6 +71,5 @@ public class ProfissaoResources {
 			return ResponseEntity.notFound().build();
 		}		
 		return ResponseEntity.noContent().build();				
-	}
-	
+	}	
 }
