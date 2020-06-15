@@ -45,8 +45,8 @@ public class UsuarioResources {
 	
 	@RequestMapping(value ="/{id}", method = RequestMethod.GET)
 	public ResponseEntity<?> buscar(@PathVariable("id") Long id) {
-		Usuario as  = service.buscar(id);
-		return ResponseEntity.status(HttpStatus.OK).body(as);
+		Usuario us = service.buscar(id);
+		return ResponseEntity.status(HttpStatus.OK).body(us);
 	}
 
 	@RequestMapping(value ="/{id}", method = RequestMethod.DELETE)
@@ -55,10 +55,10 @@ public class UsuarioResources {
 		return ResponseEntity.noContent().build();		 
 	}
 	
-	//@RequestMapping(value ="/{id}", method = RequestMethod.PUT)
-	//public ResponseEntity<Void> atualizar(@RequestBody Usuario usuario, @PathVariable("id") Long id) {
-///		usuario.setId(id);		
-		//service.atualiza(usuario);		
-		//return ResponseEntity.noContent().build();
-	//}		
+	@RequestMapping(value ="/{id}", method = RequestMethod.PUT)
+	public ResponseEntity<Void> atualizar(@RequestBody Usuario usuario, @PathVariable("id") Long id) {
+		usuario.setId(id);		
+		service.atualiza(usuario);		
+		return ResponseEntity.noContent().build();
+	}		
 }

@@ -1,24 +1,49 @@
 package com.ufg.pfc.domain;
 
+import java.io.Serializable;
+
+import javax.persistence.Embeddable;
+
+//import javax.persistence.Column;
+//import javax.persistence.Entity;
+//import javax.persistence.GeneratedValue;
+//import javax.persistence.GenerationType;
+//import javax.persistence.Id;
+
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonInclude.Include;
 
-public class Endereco {
+@Embeddable
+public class Endereco implements Serializable {
+	private static final long serialVersionUID = 1L;
+	
+//	@Id
+//	@GeneratedValue(strategy = GenerationType.IDENTITY)
+//	@Column(name="id")
+//	private Long id; 
 
-	@JsonInclude(Include.NON_NULL)
+	//@JsonInclude(Include.NON_NULL)
 	private String logradouro;
 
-	@JsonInclude(Include.NON_NULL)
+	//@JsonInclude(Include.NON_NULL)
 	private String complemento;
 
-	@JsonInclude(Include.NON_NULL)
+	//@JsonInclude(Include.NON_NULL)
 	private String cep;
 
-	@JsonInclude(Include.NON_NULL)
+	//@JsonInclude(Include.NON_NULL)
 	private String cidade;
 
-	@JsonInclude(Include.NON_NULL)
+	//@JsonInclude(Include.NON_NULL)
 	private String uf;
+	
+//	public Long getId() {
+//		return id;
+//	}
+//	
+//	public void setId(Long id) {
+//		this.id = id;
+//	}
 
 	public String getLogradouro() {
 		return logradouro;
