@@ -3,6 +3,8 @@ package com.ufg.pfc.resources;
 import java.net.URI;
 import java.util.List;
 
+import javax.validation.Valid;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
@@ -29,7 +31,7 @@ public class ResponsavelResources {
 	}
 	
 	@RequestMapping(method = RequestMethod.POST)
-	public ResponseEntity<Void> salvar(@RequestBody Responsavel responsavel) {
+	public ResponseEntity<Void> salvar(@Valid @RequestBody Responsavel responsavel) {
 		responsavel = service.salvar(responsavel);
 		URI uri = ServletUriComponentsBuilder.fromCurrentRequest().path("/id").buildAndExpand(responsavel.getId()).toUri();
 		
