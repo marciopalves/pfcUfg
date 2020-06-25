@@ -3,6 +3,8 @@ package com.ufg.pfc.resources;
 import java.net.URI;
 import java.util.List;
 
+import javax.validation.Valid;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.dao.EmptyResultDataAccessException;
 import org.springframework.data.jpa.repository.JpaRepository;
@@ -36,7 +38,7 @@ public class UsuarioResources {
 	}
 	
 	@RequestMapping(method = RequestMethod.POST)
-	public ResponseEntity<Void> salvar(@RequestBody Usuario usuario) {
+	public ResponseEntity<Void> salvar(@Valid @RequestBody Usuario usuario) {
 		usuario = service.salvar(usuario);
 		URI uri = ServletUriComponentsBuilder.fromCurrentRequest().path("/id").buildAndExpand(usuario.getId()).toUri();
 		

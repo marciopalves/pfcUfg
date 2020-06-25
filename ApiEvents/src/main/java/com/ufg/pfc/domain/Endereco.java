@@ -3,8 +3,11 @@ package com.ufg.pfc.domain;
 import java.io.Serializable;
 
 import javax.persistence.Embeddable;
-
-//import javax.persistence.Column;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.Id;
+import javax.validation.constraints.NotBlank;
+import javax.persistence.Column;
 //import javax.persistence.Entity;
 //import javax.persistence.GeneratedValue;
 //import javax.persistence.GenerationType;
@@ -17,33 +20,33 @@ import com.fasterxml.jackson.annotation.JsonInclude.Include;
 public class Endereco implements Serializable {
 	private static final long serialVersionUID = 1L;
 	
-//	@Id
-//	@GeneratedValue(strategy = GenerationType.IDENTITY)
-//	@Column(name="id")
-//	private Long id; 
+	@Id 
+	@GeneratedValue(strategy = GenerationType.IDENTITY)
+	@Column(name="id")
+	private Long id; 
 
-	//@JsonInclude(Include.NON_NULL)
-	private String logradouro;
-
-	//@JsonInclude(Include.NON_NULL)
+	@NotBlank
+	private String logradouro;	
+	
 	private String complemento;
-
-	//@JsonInclude(Include.NON_NULL)
+	
 	private String cep;
 
-	//@JsonInclude(Include.NON_NULL)
+	@NotBlank
 	private String cidade;
 
-	//@JsonInclude(Include.NON_NULL)
+	@NotBlank
 	private String uf;
 	
-//	public Long getId() {
-//		return id;
-//	}
-//	
-//	public void setId(Long id) {
-//		this.id = id;
-//	}
+	private String localizacao;
+	
+	public Long getId() {
+		return id;
+	}
+	
+	public void setId(Long id) {
+		this.id = id;
+	}
 
 	public String getLogradouro() {
 		return logradouro;
@@ -83,6 +86,14 @@ public class Endereco implements Serializable {
 
 	public void setUf(String uf) {
 		this.uf = uf;
+	}
+
+	public String getLocalizacao() {
+		return localizacao;
+	}
+
+	public void setLocalizacao(String localizacao) {
+		this.localizacao = localizacao;
 	}
 
 	@Override

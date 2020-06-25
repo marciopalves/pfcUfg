@@ -7,6 +7,7 @@ import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.Transient;
+import javax.validation.constraints.NotBlank;
 
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonInclude.Include;
@@ -14,28 +15,28 @@ import com.fasterxml.jackson.annotation.JsonInclude.Include;
 @Entity
 public class Responsavel {
 
-	@JsonInclude(Include.NON_NULL)
+	
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private Long id;
 	
-	@JsonInclude(Include.NON_NULL)	
+	@NotBlank
 	private String nome;
 	
-	@JsonInclude(Include.NON_NULL)	
+	@NotBlank
 	private String cpf;
 	
-	@JsonInclude(Include.NON_NULL)	
+	@NotBlank
 	private String email;
 	
-	@JsonInclude(Include.NON_NULL)
+	@NotBlank
 	private String telefone;
 	
-	@JsonInclude(Include.NON_NULL)
+	@NotBlank
 	private Date nasciemto;
 	
-	@Transient
-	private Endereco endereco;
+	@NotBlank
+	private String senha;
 		
 	public Long getId() {
 		return id;
@@ -74,14 +75,12 @@ public class Responsavel {
 		this.nasciemto = nasciemto;
 	}		
 	
-	public Endereco getEndereco() {
-		return this.endereco;
+	public String getSenha() {
+		return senha;
 	}
-	
-	public void setEndereco(Endereco endereco) {
-		this.endereco = endereco;
+	public void setSenha(String senha) {
+		this.senha = senha;
 	}
-	
 	public Responsavel() {		
 	}
 	

@@ -9,6 +9,7 @@ import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.OneToOne;
+import javax.validation.constraints.NotBlank;
 
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonInclude.Include;
@@ -21,23 +22,23 @@ public class Usuario implements Serializable {
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	@Column(name="id")
 	private Long id;
-		
+	
+	@NotBlank
 	private String nome;
 		
 	private String cpf;
 	
+	@NotBlank
 	private String senha;
 	
 	@Column(unique = true)
+	@NotBlank
 	private String email;
 	
+	@NotBlank
 	private String telefone;
 	
 	private String nasciemto;
-	
-	@Embedded
-	private Endereco endereco;
-	
 	
 	public Usuario() {
 		
@@ -49,6 +50,7 @@ public class Usuario implements Serializable {
 	public void setId(Long id) {
 		this.id = id;
 	}
+	
 	public String getNome() {
 		return nome;
 	}
@@ -87,13 +89,5 @@ public class Usuario implements Serializable {
 	public void setNasciemto(String nasciemto) {
 		this.nasciemto = nasciemto;
 	}	
-	
-	public Endereco getEndereco() {
-		return this.endereco;
-	}
-	
-	public void setEndereco(Endereco endereco) {
-		this.endereco = endereco;
-	}
 	
 }
